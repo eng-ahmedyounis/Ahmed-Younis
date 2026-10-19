@@ -1,2232 +1,353 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <title>Ahmed Younis | Structural Design Engineer</title>
-
-
-    <style>
-
-        /* =====================================================
-           GLOBAL
-        ===================================================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0B1220;
-            color: #F8FAFC;
-            line-height: 1.6;
-        }
-
-
-        a {
-            text-decoration: none;
-        }
-
-
-
-        /* =====================================================
-           HEADER
-        ===================================================== */
-
-        header {
-            width: 100%;
-            height: 75px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            padding: 0 8%;
-
-            position: fixed;
-            top: 0;
-            left: 0;
-
-            z-index: 1000;
-
-            background: rgba(11, 18, 32, 0.85);
-
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-
-            border-bottom: 1px solid rgba(59, 130, 246, 0.15);
-        }
-
-
-        .logo {
-            color: #F8FAFC;
-
-            font-size: 1.5em;
-
-            font-weight: 800;
-
-            letter-spacing: 0.5px;
-
-            transition: 0.3s ease;
-        }
-
-
-        .logo:hover {
-            color: #3B82F6;
-        }
-
-
-        .navigation {
-            display: flex;
-
-            gap: 32px;
-        }
-
-
-        .navigation a {
-            color: #CBD5E1;
-
-            font-size: 1em;
-
-            font-weight: 500;
-
-            transition: 0.3s ease;
-        }
-
-
-        .navigation a:hover {
-            color: #3B82F6;
-        }
-
-
-
-        /* =====================================================
-           MAIN / HERO
-        ===================================================== */
-
-        .main {
-            min-height: 100vh;
-
-            display: flex;
-            align-items: center;
-
-            padding: 120px 8% 80px;
-
-            position: relative;
-
-            overflow: hidden;
-
-            background:
-
-                radial-gradient(
-                    circle at 80% 20%,
-                    rgba(59, 130, 246, 0.15),
-                    transparent 35%
-                ),
-
-                radial-gradient(
-                    circle at 20% 80%,
-                    rgba(34, 211, 238, 0.08),
-                    transparent 30%
-                ),
-
-                #0B1220;
-        }
-
-
-        .main::before {
-            content: "";
-
-            position: absolute;
-
-            width: 400px;
-            height: 400px;
-
-            right: -150px;
-            bottom: -150px;
-
-            border-radius: 50%;
-
-            border: 1px solid rgba(59, 130, 246, 0.15);
-
-            box-shadow:
-
-                0 0 0 50px rgba(59, 130, 246, 0.02),
-
-                0 0 0 100px rgba(59, 130, 246, 0.02),
-
-                0 0 0 150px rgba(59, 130, 246, 0.02);
-        }
-
-
-
-        /* =====================================================
-           HERO CONTENT
-        ===================================================== */
-
-        .hero-wrapper {
-
-            width: 100%;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            gap: 100px;
-
-            position: relative;
-
-            z-index: 2;
-        }
-
-
-        .hero-text {
-
-            flex: 1;
-
-            max-width: 650px;
-        }
-
-
-
-        /* =====================================================
-           HERO TEXT
-        ===================================================== */
-
-        .main h2 {
-
-            font-size: 3.8em;
-
-            font-weight: 800;
-
-            line-height: 1.15;
-
-            margin-bottom: 20px;
-        }
-
-
-        .main h2 span {
-
-            color: #3B82F6;
-
-            background: linear-gradient(
-                90deg,
-                #3B82F6,
-                #22D3EE
-            );
-
-            -webkit-background-clip: text;
-
-            -webkit-text-fill-color: transparent;
-        }
-
-
-        .main h3 {
-
-            color: #94A3B8;
-
-            font-size: 1.15em;
-
-            font-weight: 500;
-
-            line-height: 1.8;
-
-            margin-bottom: 30px;
-        }
-
-
-
-        /* =====================================================
-           VIEW MY WORK BUTTON
-           SAME WIDTH AS 4 SOCIAL ICONS
-        ===================================================== */
-
-        .main-btn {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            width: 214px;
-
-            height: 50px;
-
-            color: #FFFFFF;
-
-            background: linear-gradient(
-                135deg,
-                #2563EB,
-                #3B82F6
-            );
-
-            border-radius: 8px;
-
-            font-size: 1em;
-
-            font-weight: 700;
-
-            letter-spacing: 0.3px;
-
-            box-shadow:
-                0 10px 30px rgba(37, 99, 235, 0.25);
-
-            transition: 0.3s ease;
-        }
-
-
-        .main-btn:hover {
-
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 15px 35px rgba(37, 99, 235, 0.4);
-        }
-
-
-
-        /* =====================================================
-           SOCIAL ICONS
-           BLUE GLOW ALWAYS ON
-        ===================================================== */
-
-        .social-icons {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 14px;
-
-            margin-top: 30px;
-
-            width: 214px;
-        }
-
-
-        .social-icons a {
-
-            width: 43px;
-            height: 43px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 10px;
-
-            color: #CBD5E1;
-
-            background: #111C33;
-
-            border: 1px solid #3B82F6;
-
-            font-size: 1.25em;
-
-            transition: 0.3s ease;
-
-            box-shadow:
-
-                0 0 8px rgba(59, 130, 246, 0.35),
-
-                inset 0 0 8px rgba(59, 130, 246, 0.08);
-        }
-
-
-        .social-icons a:hover {
-
-            color: #FFFFFF;
-
-            background: #2563EB;
-
-            border-color: #60A5FA;
-
-            transform: translateY(-5px);
-
-            box-shadow:
-
-                0 0 12px rgba(59, 130, 246, 0.7),
-
-                0 10px 25px rgba(37, 99, 235, 0.35);
-        }
-
-
-
-        /* =====================================================
-           HERO IMAGE
-        ===================================================== */
-
-        .hero-image {
-
-            flex-shrink: 0;
-
-            width: 360px;
-            height: 440px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            position: relative;
-        }
-
-
-        .hero-image::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 100%;
-            height: 100%;
-
-            border-radius: 24px;
-
-            border: 1px solid rgba(59, 130, 246, 0.35);
-
-            box-shadow:
-
-                0 0 35px rgba(59, 130, 246, 0.12);
-
-            transform: rotate(4deg);
-
-            z-index: 0;
-        }
-
-
-        .hero-image img {
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            border-radius: 24px;
-
-            position: relative;
-
-            z-index: 1;
-
-            border: 2px solid rgba(59, 130, 246, 0.6);
-
-            box-shadow:
-
-                0 0 30px rgba(59, 130, 246, 0.25);
-
-            transition: 0.4s ease;
-        }
-
-
-        .hero-image:hover img {
-
-            transform: translateY(-5px);
-
-            box-shadow:
-
-                0 0 45px rgba(59, 130, 246, 0.4);
-        }
-
-
-
-        /* =====================================================
-           GENERAL SECTIONS
-        ===================================================== */
-
-        section {
-
-            padding: 90px 8%;
-        }
-
-
-        .title {
-
-            text-align: center;
-
-            font-size: 2.5em;
-
-            margin-bottom: 55px;
-
-            font-weight: 800;
-
-            color: #F8FAFC;
-
-            position: relative;
-        }
-
-
-        .title::after {
-
-            content: "";
-
-            display: block;
-
-            width: 55px;
-            height: 4px;
-
-            margin: 14px auto 0;
-
-            border-radius: 10px;
-
-            background: linear-gradient(
-                90deg,
-                #3B82F6,
-                #22D3EE
-            );
-        }
-
-
-
-        /* =====================================================
-           SERVICES
-        ===================================================== */
-
-        .cards {
-
-            background: #0F172A;
-        }
-
-
-        .content {
-
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 25px;
-        }
-
-
-        .card {
-
-            width: 31%;
-
-            min-width: 280px;
-
-            padding: 35px 30px;
-
-            background: #111C33;
-
-            border: 1px solid rgba(148, 163, 184, 0.10);
-
-            border-radius: 15px;
-
-            text-align: center;
-
-            transition: 0.35s ease;
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-
-        .card::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 3px;
-
-            background: linear-gradient(
-                90deg,
-                #3B82F6,
-                #22D3EE
-            );
-
-            transform: scaleX(0);
-
-            transform-origin: left;
-
-            transition: 0.35s ease;
-        }
-
-
-        .card:hover {
-
-            transform: translateY(-8px);
-
-            border-color: rgba(59, 130, 246, 0.35);
-
-            box-shadow:
-
-                0 20px 50px rgba(0, 0, 0, 0.25);
-        }
-
-
-        .card:hover::before {
-
-            transform: scaleX(1);
-        }
-
-
-        .icon {
-
-            color: #3B82F6;
-
-            font-size: 3em;
-
-            margin-bottom: 20px;
-
-            transition: 0.3s ease;
-        }
-
-
-        .card:hover .icon {
-
-            color: #22D3EE;
-
-            transform: scale(1.08);
-        }
-
-
-        .info h3 {
-
-            color: #F8FAFC;
-
-            font-size: 1.35em;
-
-            margin-bottom: 15px;
-        }
-
-
-        .info p {
-
-            color: #94A3B8;
-
-            font-size: 0.95em;
-
-            line-height: 1.8;
-        }
-
-
-
-        /* =====================================================
-           PROJECTS
-        ===================================================== */
-
-        .projects {
-
-            background: #0B1220;
-        }
-
-
-        .projects .content {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 25px;
-        }
-
-
-        .project-card {
-
-            width: 100%;
-
-            min-width: 0;
-
-            background: #111C33;
-
-            border-radius: 14px;
-
-            overflow: hidden;
-
-            border: 1px solid rgba(148, 163, 184, 0.10);
-
-            transition: 0.35s ease;
-        }
-
-
-        .project-card:hover {
-
-            transform: translateY(-8px);
-
-            border-color: rgba(59, 130, 246, 0.35);
-
-            box-shadow:
-
-                0 20px 45px rgba(0, 0, 0, 0.3);
-        }
-
-
-        .project-image {
-
-            width: 100%;
-
-            height: 220px;
-
-            overflow: hidden;
-
-            background: #172033;
-        }
-
-
-        .project-image img {
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            display: block;
-
-            transition: 0.5s ease;
-        }
-
-
-        .project-card:hover .project-image img {
-
-            transform: scale(1.06);
-        }
-
-
-        .project-info {
-
-            padding: 22px;
-        }
-
-
-        .project-category {
-
-            color: #94A3B8;
-
-            font-size: 0.9em;
-
-            margin-bottom: 12px;
-        }
-
-
-        .project-title {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            gap: 10px;
-        }
-
-
-        .project-title span {
-
-            color: #F8FAFC;
-
-            font-size: 1.05em;
-        }
-
-
-        .more-details {
-
-            color: #3B82F6;
-
-            font-size: 0.9em;
-
-            font-weight: 700;
-
-            white-space: nowrap;
-
-            transition: 0.3s ease;
-        }
-
-
-        .more-details:hover {
-
-            color: #22D3EE;
-        }
-
-
-
-        /* =====================================================
-           CONTACT
-        ===================================================== */
-
-        .contact {
-
-            background: #0F172A;
-        }
-
-
-        .contact .card {
-
-            cursor: pointer;
-
-            padding: 35px 30px;
-        }
-
-
-        .contact .card a {
-
-            display: block;
-
-            width: 100%;
-
-            color: inherit;
-        }
-
-
-        .contact .info h3 {
-
-            margin: 0;
-
-            color: #F8FAFC;
-
-            transition: 0.3s ease;
-        }
-
-
-        .contact .card:hover .info h3 {
-
-            color: #3B82F6;
-        }
-
-
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        .footer {
-
-            background: #070D18;
-
-            padding: 35px 8%;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            flex-wrap: wrap;
-
-            gap: 20px;
-
-            border-top:
-                1px solid rgba(148, 163, 184, 0.08);
-        }
-
-
-        .footer-title {
-
-            color: #64748B;
-
-            font-size: 0.9em;
-        }
-
-
-        /* BLUE ENG AHMED YOUNIS */
-
-        .footer-name {
-
-            color: #3B82F6;
-
-            font-weight: 700;
-
-            text-shadow:
-                0 0 10px rgba(59, 130, 246, 0.25);
-        }
-
-
-        .footer .social-icons {
-
-            margin: 0;
-
-            gap: 10px;
-
-            width: auto;
-        }
-
-
-        .footer .social-icons a {
-
-            width: 38px;
-            height: 38px;
-
-            border-radius: 9px;
-
-            font-size: 1em;
-
-            border-color: #3B82F6;
-
-            box-shadow:
-                0 0 7px rgba(59, 130, 246, 0.3);
-        }
-
-
-
-        /* =====================================================
-           RESPONSIVE - TABLET
-        ===================================================== */
-
-        @media (max-width: 1000px) {
-
-            .hero-wrapper {
-
-                gap: 50px;
-            }
-
-
-            .hero-image {
-
-                width: 300px;
-
-                height: 380px;
-            }
-
-
-            .main h2 {
-
-                font-size: 3.2em;
-            }
-
-
-            .projects .content {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-        }
-
-
-
-        /* =====================================================
-           RESPONSIVE - MOBILE
-        ===================================================== */
-
-        @media (max-width: 750px) {
-
-            header {
-
-                height: 70px;
-
-                padding: 0 5%;
-            }
-
-
-            .logo {
-
-                font-size: 1.2em;
-            }
-
-
-            .navigation {
-
-                gap: 12px;
-            }
-
-
-            .navigation a {
-
-                font-size: 0.8em;
-            }
-
-
-            .main {
-
-                min-height: 100vh;
-
-                padding:
-                    120px 7%
-                    70px;
-            }
-
-
-            .hero-wrapper {
-
-                flex-direction: column;
-
-                text-align: center;
-
-                gap: 60px;
-            }
-
-
-            .hero-text {
-
-                width: 100%;
-            }
-
-
-            .main h2 {
-
-                font-size: 2.5em;
-            }
-
-
-            .main h3 {
-
-                font-size: 0.95em;
-
-                line-height: 1.7;
-            }
-
-
-            .main-btn {
-
-                margin: 0 auto;
-
-                width: 214px;
-            }
-
-
-            .social-icons {
-
-                margin-left: auto;
-
-                margin-right: auto;
-
-                justify-content: center;
-            }
-
-
-            .hero-image {
-
-                width: 270px;
-
-                height: 340px;
-            }
-
-
-            section {
-
-                padding:
-                    70px 6%;
-            }
-
-
-            .title {
-
-                font-size: 2em;
-
-                margin-bottom: 40px;
-            }
-
-
-            .card {
-
-                width: 100%;
-
-                min-width: 0;
-            }
-
-
-            .projects .content {
-
-                grid-template-columns: 1fr;
-            }
-
-
-            .project-card {
-
-                width: 100%;
-            }
-
-
-            .project-image {
-
-                height: 230px;
-            }
-
-
-            .footer {
-
-                flex-direction: column;
-
-                justify-content: center;
-
-                text-align: center;
-
-                padding: 30px 5%;
-            }
-
-        }
-
-
-        /* =====================================================
-           ADDED SECTIONS: CODES, SUMMARY | CUFE, STRUCTURAL WORK
-        ===================================================== */
-        .added-section { background: #0B1220; }
-        .added-section.alt { background: #0F172A; }
-        .section-intro { max-width: 780px; margin: -30px auto 38px; text-align: center; color: #94A3B8; }
-        .country-heading { display:flex; align-items:center; justify-content:center; gap:12px; margin: 12px 0 25px; color:#F8FAFC; font-size:1.55em; }
-        .country-flag { display:inline-flex; align-items:center; justify-content:center; font-size:1.7em; filter: drop-shadow(0 4px 8px rgba(0,0,0,.25)); }
-        .code-grid, .summary-grid, .structural-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin-bottom:38px; }
-        .code-country { background:#0F172A; border:1px solid rgba(148,163,184,.14); border-radius:16px; padding:24px; }
-        .code-country h3 { display:flex; align-items:center; gap:10px; margin-bottom:18px; font-size:1.18em; }
-        .code-item { padding:16px 0; border-top:1px solid rgba(148,163,184,.13); }
-        .code-item strong { display:block; color:#F8FAFC; margin-bottom:5px; }
-        .code-item p { color:#94A3B8; font-size:.92em; margin-bottom:13px; }
-        .download-btn, .show-all-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 15px; border-radius:8px; background:#2563EB; color:white; font-weight:700; font-size:.9em; transition:.25s ease; border:0; cursor:pointer; }
-        .download-btn:hover, .show-all-btn:hover { background:#1D4ED8; transform:translateY(-2px); }
-        .summary-card { background:#111C33; border:1px solid rgba(148,163,184,.13); border-radius:15px; overflow:hidden; }
-        .pdf-cover { min-height:230px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; padding:22px; background:linear-gradient(145deg,#172554,#111C33 70%); border-bottom:1px solid rgba(148,163,184,.13); }
-        .pdf-cover i { font-size:3.4em; color:#60A5FA; }
-        .pdf-cover strong { font-size:1.15em; }
-        .pdf-cover span { color:#94A3B8; font-size:.88em; }
-        .summary-info { padding:20px; }
-        .summary-info p { color:#94A3B8; margin:8px 0 16px; font-size:.92em; }
-        .summary-actions { display:flex; flex-wrap:wrap; gap:10px; }
-        .show-all-btn.secondary { background:#1E293B; border:1px solid #334155; }
-        .structural-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
-        .structural-card { background:#111C33; border:1px solid rgba(148,163,184,.13); border-radius:15px; overflow:hidden; }
-        .structural-image { min-height:180px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; background:radial-gradient(circle at 50% 20%,rgba(59,130,246,.22),transparent 55%),#172033; color:#60A5FA; text-align:center; padding:18px; }
-        .structural-image i { font-size:3em; }
-        .structural-image span { color:#94A3B8; font-size:.85em; }
-        .structural-info { padding:20px; }
-        .structural-info h4 { color:#F8FAFC; font-size:1.08em; margin-bottom:12px; }
-        .structural-info p { color:#94A3B8; font-size:.93em; margin:6px 0; }
-        .structural-info b { color:#CBD5E1; }
-        .pdf-modal { display:none; position:fixed; inset:0; z-index:2000; background:rgba(2,6,23,.92); padding:3vh 3vw; }
-        .pdf-modal.open { display:flex; flex-direction:column; }
-        .pdf-modal-head { display:flex; align-items:center; justify-content:space-between; gap:15px; margin-bottom:12px; }
-        .pdf-modal-head h3 { font-size:1.1em; }
-        .pdf-modal iframe { width:100%; flex:1; min-height:0; border:0; border-radius:10px; background:white; }
-        .modal-close { color:white; background:#1E293B; border:1px solid #475569; border-radius:8px; padding:10px 14px; cursor:pointer; }
-        .setup-note { color:#64748B; font-size:.82em; line-height:1.6; margin-top:14px; }
-        @media(max-width:1000px) { .code-grid { grid-template-columns:1fr; } .structural-grid,.summary-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-        @media(max-width:750px) { .navigation { gap:8px; flex-wrap:wrap; justify-content:flex-end; max-width:72%; } .navigation a { font-size:.72em; } header { padding:0 3%; } .structural-grid,.summary-grid { grid-template-columns:1fr; } .country-heading { font-size:1.3em; } .pdf-modal { padding:12px; } }
-
-    </style>
-
-</head>
-
-
-
-<body>
-
-
-    <!-- =====================================================
-         HEADER
-    ===================================================== -->
-
-    <header>
-
-        <a href="#home" class="logo">
-            Ahmed Younis
-        </a>
-
-
-        <nav class="navigation">
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#services">
-                Services
-            </a>
-
-            <a href="#projects">
-                Previous Work
-            </a>
-
-            <a href="#codes">Codes</a>
-            <a href="#summary-cufe">Summary | CUFE</a>
-            <!--
-            <a href="#structural-work">Structural Work</a>
-             -->
-            <a href="#contact">
-                Contact
-            </a>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         HOME / HERO
-    ===================================================== -->
-
-    <section class="main" id="home">
-
-
-        <div class="hero-wrapper">
-
-
-            <!-- TEXT -->
-
-            <div class="hero-text">
-
-
-                <h2>
-
-                    Hello, I'm Ahmed
-
-                    <br>
-
-                    <span>
-                        Structural Design Engineer
-                    </span>
-
-                </h2>
-
-
-                <h3>
-
-                    Civil Engineer &amp; Structural Design Engineer | Revit Structure |
-                    Reinforced Concrete Design | ECP • SBC • ACI | Senior Graphic Designer |
-                    Front-End Developer | Remote Work Ready
-
-                </h3>
-
-
-                <!-- VIEW MY WORK -->
-
-                <a href="#projects"
-                   class="main-btn">
-
-                    View my work
-
-                </a>
-
-
-                <!-- SOCIAL MEDIA -->
-
-                <div class="social-icons">
-
-
-                    <!-- LinkedIn -->
-
-                    <a href="https://www.linkedin.com/in/ahmedyounis12/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="LinkedIn">
-
-                        <i class="fab fa-linkedin"></i>
-
-                    </a>
-
-
-
-                    <!-- Behance -->
-
-                    <a href="https://www.behance.net/ahmedyounes22"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="Behance">
-
-                        <i class="fab fa-behance-square"></i>
-
-                    </a>
-
-
-
-                    <!-- Telegram -->
-
-                    <a href="https://t.me/Ahemd_Younis_ELHoot"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="Telegram">
-
-                        <i class="fab fa-telegram"></i>
-
-                    </a>
-
-
-
-                    <!-- YouTube -->
-
-                    <a href="https://www.youtube.com/@AHMEDYOUNES_ELHOOT"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="YouTube">
-
-                        <i class="fab fa-youtube"></i>
-
-                    </a>
-
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 YOUR PHOTO
-                 PUT YOUR PHOTO IN:
-                 images/ahmed.jpg
-            ================================================= -->
-
-            <div class="hero-image">
-
-                <img src="images/ahmed.jpg"
-                     alt="Ahmed Younis">
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         SERVICES
-    ===================================================== -->
-
-    <section class="cards"
-             id="services">
-
-
-        <h2 class="title">
-            Services
-        </h2>
-
-
-        <div class="content">
-
-
-            <!-- GRAPHIC DESIGN -->
-
-            <div class="card">
-
-                <div class="icon">
-
-                    <i class="fas fa-pen-nib"></i>
-
-                </div>
-
-
-                <div class="info">
-
-                    <h3>
-                        Graphic Design
-                    </h3>
-
-
-                    <p>
-
-                        With over five years of experience in graphic design,
-                        I have created more than 1,000 designs and developed
-                        complete visual identities with professionalism.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- STRUCTURAL ENGINEERING -->
-
-            <div class="card">
-
-                <div class="icon">
-
-                    <i class="fas fa-hard-hat"></i>
-
-                </div>
-
-
-                <div class="info">
-
-                    <h3>
-                        Structural Engineer
-                    </h3>
-
-
-                    <p>
-
-                        A civil engineer specializing in project management,
-                        with expertise in reinforced concrete design.
-                        I have also taught a structural design diploma
-                        to over 326 students.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- FRONT END -->
-
-            <div class="card">
-
-                <div class="icon">
-
-                    <i class="fas fa-code"></i>
-
-                </div>
-
-
-                <div class="info">
-
-                    <h3>
-                        Front-End Developer
-                    </h3>
-
-
-                    <p>
-
-                        With more than 3 years of experience in front-end
-                        development, I have worked on designing four websites,
-                        including two major Egyptian companies in the real world.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PROJECTS
-    ===================================================== -->
-
-    <section class="projects"
-             id="projects">
-
-
-        <h2 class="title">
-            Projects
-        </h2>
-
-
-        <div class="content">
-
-
-            <!-- PROJECT 1 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img src="images/kk.jpg"
-                         alt="Python Course">
-
-                </div>
-
-
-                <div class="project-info">
-
-                    <p class="project-category">
-                        Learn Python for beginners
-                    </p>
-
-
-                    <strong class="project-title">
-
-                        <span>
-                            Course Python
-                        </span>
-
-
-<a href="https://youtube.com/playlist?list=PLCIQzPhBpWzNRUH0dxGrepBesXwJYCj_W&si=B7IkAiuKBw20ftuD"
-   class="more-details"
-   target="_blank"
-   rel="noopener noreferrer">
-
-    More details
-
-</a>
-
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PROJECT 2 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img src="images/ww.jpg"
-                         alt="Structural Design Diploma">
-
-                </div>
-
-
-                <div class="project-info">
-
-                    <p class="project-category">
-                        Structural Design Diploma Pro Track
-                    </p>
-
-
-                    <strong class="project-title">
-
-                        <span>
-                            Structural Design Diploma 
-                        </span>
-
-
-                        <a href="#"
-                           class="more-details">
-
-                            More details
-
-                        </a>
-
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PROJECT 3 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img src="images/my-02.jpg"
-                         alt="Logo Design">
-
-                </div>
-
-
-                <div class="project-info">
-
-                    <p class="project-category">
-                        Some of my logo design work
-                    </p>
-
-
-                    <strong class="project-title">
-
-                        <span>
-                            Logo Brand
-                        </span>
-
-
-                        <a href="#"
-                           class="more-details">
-
-                            More details
-
-                        </a>
-
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PROJECT 4 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img src="images/Screenshot (1885).png"
-                         alt="Visual Identity">
-
-                </div>
-
-
-                <div class="project-info">
-
-                    <p class="project-category">
-                        Complete visual identity
-                    </p>
-
-
-                    <strong class="project-title">
-
-                        <span>
-                            Visual Identity
-                        </span>
-
-
-                        <a href="#"
-                           class="more-details">
-
-                            More details
-
-                        </a>
-
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PROJECT 5 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img src="images/front.jpg"
-                         alt="Front-End Development">
-
-                </div>
-
-
-                <div class="project-info">
-
-                    <p class="project-category">
-                        Front-end developer using (HTML, CSS, JS)
-                    </p>
-
-
-                    <strong class="project-title">
-
-                        <span>
-                            Build a Website
-                        </span>
-
-
-                        <a href="#"
-                           class="more-details">
-
-                            More details
-
-                        </a>
-
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PROJECT 6 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img src="images/beam.jpg"
-                         alt="Influence Lines">
-
-                </div>
-
-
-                <div class="project-info">
-
-                    <p class="project-category">
-                        Influence Lines for Statically Determinate Structures
-                    </p>
-
-
-                    <strong class="project-title">
-
-                        <span>
-                            Influence Lines
-                        </span>
-
-
-                        <a href="#"
-                           class="more-details">
-
-                            More details
-
-                        </a>
-
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-
-
-    <!-- =====================================================
-         CODES SECTION
-         PDF SETUP: put each official PDF in the matching path below.
-         Example: files/codes/ECP-203-2025.pdf
-         Keep the filename and folder path exactly the same as href.
-         Use only PDFs you are authorized to distribute.
-    ===================================================== -->
-
-<section class="added-section alt" id="codes">
-    <h2 class="title">Structural Design Codes</h2>
-
-    <p class="section-intro">
-        Quick access to concrete design and loading codes for Egypt,
-        Saudi Arabia, and the United States.
-    </p>
-
-    <div class="code-grid">
-
-        <!-- Egypt -->
-        <article class="code-country">
-            <h3>
-                <span class="country-flag" aria-label="Egypt flag">🇪🇬</span>
-                Egypt — ECP
-            </h3>
-
-            <div class="code-item">
-                <strong>ECP 203-2025</strong>
-                <p>Design and construction of reinforced concrete structures.</p>
-
-                <div class="summary-actions">
-                    <button class="show-all-btn"
-                        onclick="openPdf('files/codes/ECP-203-2025.pdf', 'ECP 203-2025')">
-                        <i class="fas fa-eye"></i> Read
-                    </button>
-
-                    <a class="download-btn"
-                        href="files/codes/ECP-203-2025.pdf"
-                        download>
-                        <i class="fas fa-download"></i> Download
-                    </a>
-                </div>
-            </div>
-
-            <div class="code-item">
-                <strong>ECP 201-2012</strong>
-                <p>Loads and forces for structural and building works.</p>
-
-                <div class="summary-actions">
-                    <button class="show-all-btn"
-                        onclick="openPdf('files/codes/ECP-201-2012.pdf', 'ECP 201-2012')">
-                        <i class="fas fa-eye"></i> Read
-                    </button>
-
-                    <a class="download-btn"
-                        href="files/codes/ECP-201-2012.pdf"
-                        download>
-                        <i class="fas fa-download"></i> Download
-                    </a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Saudi Arabia -->
-        <article class="code-country">
-            <h3>
-                <span class="country-flag" aria-label="Saudi Arabia flag">🇸🇦</span>
-                Saudi Arabia — SBC
-            </h3>
-
-            <div class="code-item">
-                <strong>SBC 304-2024</strong>
-                <p>Concrete structures code.</p>
-
-                <div class="summary-actions">
-                    <button class="show-all-btn"
-                        onclick="openPdf('files/codes/SBC-304-2024.pdf', 'SBC 304-2024')">
-                        <i class="fas fa-eye"></i> Read
-                    </button>
-
-                    <a class="download-btn"
-                        href="files/codes/SBC-304-2024.pdf"
-                        download>
-                        <i class="fas fa-download"></i> Download
-                    </a>
-                </div>
-            </div>
-
-            <div class="code-item">
-                <strong>SBC 301-2024</strong>
-                <p>Loads and forces requirements.</p>
-
-                <div class="summary-actions">
-                    <button class="show-all-btn"
-                        onclick="openPdf('files/codes/SBC-301-2024.pdf', 'SBC 301-2024')">
-                        <i class="fas fa-eye"></i> Read
-                    </button>
-
-                    <a class="download-btn"
-                        href="files/codes/SBC-301-2024.pdf"
-                        download>
-                        <i class="fas fa-download"></i> Download
-                    </a>
-                </div>
-            </div>
-        </article>
-
-        <!-- United States -->
-        <article class="code-country">
-            <h3>
-                <span class="country-flag" aria-label="United States flag">🇺🇸</span>
-                United States — ACI / ASCE
-            </h3>
-
-            <div class="code-item">
-                <strong>ACI 318-19</strong>
-                <p>Building Code Requirements for Structural Concrete.</p>
-
-                <div class="summary-actions">
-                    <button class="show-all-btn"
-                        onclick="openPdf('files/codes/ACI-318-19.pdf', 'ACI 318-19')">
-                        <i class="fas fa-eye"></i> Read
-                    </button>
-
-                    <a class="download-btn"
-                        href="files/codes/ACI-318-19.pdf"
-                        download>
-                        <i class="fas fa-download"></i> Download
-                    </a>
-                </div>
-            </div>
-
-            <div class="code-item">
-                <strong>ASCE/SEI 7-16</strong>
-                <p>Minimum Design Loads and Associated Criteria for Buildings and Other Structures.</p>
-
-                <div class="summary-actions">
-                    <button class="show-all-btn"
-                        onclick="openPdf('files/codes/ASCE-7-16.pdf', 'ASCE/SEI 7-16')">
-                        <i class="fas fa-eye"></i> Read
-                    </button>
-
-                    <a class="download-btn"
-                        href="files/codes/ASCE-7-16.pdf"
-                        download>
-                        <i class="fas fa-download"></i> Download
-                    </a>
-                </div>
-            </div>
-        </article>
-
-    </div>
-
-</section>
-    <!-- =====================================================
-         SUMMARY | CUFE
-         PDF SETUP: add your two files as:
-         files/summary-cufe/summary-1.pdf and files/summary-cufe/summary-2.pdf
-         Update the visible title below for each file. The preview uses the PDF
-         viewer inside a modal; if you want a custom cover image, place it in
-         images/ and update the img/cover markup for each card.
-    ===================================================== -->
-    
-<section class="added-section" id="summary-cufe">
-    <h2 class="title">Summary | CUFE</h2>
-    <p class="section-intro">
-        My university summaries and study notes from Cairo University Faculty of Engineering.
-    </p>
-
-    <div class="summary-grid">
-
-        <!-- Summary 01 -->
-        <article class="summary-card">
-            <div class="pdf-cover">
-                <img
-                    src="images/cufe-summary-01.png"
-                    alt="CUFE Summary 01 - Lateral Forces Cover"
-                >
-            </div>
-
-            <div class="summary-info">
-                <h3>Lateral Forces</h3>
-                <p>Assignment 1.</p>
-
-                <div class="summary-actions">
-                    <button
-                        class="show-all-btn"
-                        onclick="openPdf('files/summary-cufe/summary-1.pdf', 'Summary File 01')"
-                    >
-                        <i class="fas fa-eye"></i> Read 
-                    </button>
-
-                    <a
-                        class="download-btn"
-                        href="files/summary-cufe/summary-1.pdf"
-                        download
-                    >
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Summary 02 -->
-        <article class="summary-card">
-            <div class="pdf-cover">
-                <img
-                    src="images/cufe-summary-02.png"
-                    alt="CUFE Summary 02 - Estimating and Quantity Surveying Cover"
-                >
-            </div>
-
-            <div class="summary-info">
-                <h3>Estimating and Quantity Surveying</h3>
-                <p>Assignment 1 - Prob 1, 2, 3, 4, 8.</p>
-
-                <div class="summary-actions">
-                    <button
-                        class="show-all-btn"
-                        onclick="openPdf('files/summary-cufe/summary-2.pdf', 'Summary File 02')"
-                    >
-                        <i class="fas fa-eye"></i> Read
-                    </button>
-
-                    <a
-                        class="download-btn"
-                        href="files/summary-cufe/summary-2.pdf"
-                        download
-                    >
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
-                </div>
-            </div>
-        </article>
-
-    </div>
-</section>
-
-    <!-- =====================================================
-         STRUCTURAL WORK / PROJECTS
-         Add actual project renders later by replacing each placeholder block
-         with an <img src="images/your-existing-or-new-render.jpg" ...> tag.
-         Existing image names and paths in the Previous Work section above are untouched.
-    ===================================================== -->
-
-<section class="added-section alt" id="structural-work" style="display: none;">
-        <h2 class="title">Structural Work</h2>
-
-    <p class="section-intro">
-        Selected residential structural projects in Egypt and Saudi Arabia.
-    </p>
-
-    <h3 class="country-heading">
-        <span class="country-flag" aria-label="Egypt flag"></span>
-        Projects in Egypt
-    </h3>
-
-    <div class="structural-grid">
-
-        <!-- Project 1 -->
-        <article class="structural-card">
-            <div class="structural-image">
-                <i class="fas fa-city"></i>
-                <strong>Project Render</strong>
-                <span>Villa Compound — 6th of October</span>
-            </div>
-
-            <div class="structural-info">
-                <h4>Villa Compound — 6th of October</h4>
-                <p><b>Building:</b> Ground + First + Second + Roof</p>
-                <p><b>Structural system:</b> Flat slab</p>
-
-                <button class="show-all-btn" type="button"
-                    onclick="openPdf('files/structural-projects/villa-october-portfolio.pdf', 'Villa Compound — 6th of October')">
-                    <i class="fas fa-file-pdf"></i>
-                    View Project Gallery
-                </button>
-            </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="structural-card">
-            <div class="structural-image">
-                <i class="fas fa-building"></i>
-                <strong>Project Render</strong>
-                <span>Residential Building — 6th of October</span>
-            </div>
-
-            <div class="structural-info">
-                <h4>Residential Building — 6th of October</h4>
-                <p><b>Building:</b> Basement + Ground + 13 floors</p>
-                <p><b>Structural system:</b> Solid slab and flat slab</p>
-
-                <button class="show-all-btn" type="button"
-                    onclick="openPdf('files/structural-projects/residential-october-portfolio.pdf', 'Residential Building — 6th of October')">
-                    <i class="fas fa-file-pdf"></i>
-                    View Project Gallery
-                </button>
-            </div>
-        </article>
-
-    </div>
-
-    <h3 class="country-heading">
-        <span class="country-flag" aria-label="Saudi Arabia flag"></span>
-        Projects in Saudi Arabia
-    </h3>
-
-    <div class="structural-grid">
-
-        <!-- Project 4 -->
-        <article class="structural-card">
-            <div class="structural-image">
-                <i class="fas fa-house"></i>
-                <strong>Project Render</strong>
-                <span>Residential Villa — Dammam</span>
-            </div>
-
-            <div class="structural-info">
-                <h4>Residential Villa — Dammam</h4>
-                <p><b>Building:</b> Ground + First + Second</p>
-                <p><b>Structural system:</b> Hordi (ribbed slab)</p>
-
-                <button class="show-all-btn" type="button"
-                    onclick="openPdf('files/structural-projects/villa-dammam-portfolio.pdf', 'Residential Villa — Dammam')">
-                    <i class="fas fa-file-pdf"></i>
-                    View Project Gallery
-                </button>
-            </div>
-        </article>
-
-    </div>
-</section>
-
-    <!-- =====================================================
-         CONTACT
-    ===================================================== -->
-
-    <section class="cards contact"
-             id="contact">
-
-
-        <h2 class="title">
-            Let's work together
-        </h2>
-
-
-        <div class="content">
-
-
-            <!-- WHATSAPP -->
-
-            <div class="card">
-
-                <a href="https://wa.me/201202504535?text=Hello%20Ahmed%2C%20I%20came%20from%20your%20website"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   aria-label="Contact Ahmed on WhatsApp">
-
-
-                    <div class="icon">
-
-                        <i class="fab fa-whatsapp"></i>
-
-                    </div>
-
-
-                    <div class="info">
-
-                        <h3>
-                            WhatsApp
-                        </h3>
-
-                    </div>
-
-
-                </a>
-
-            </div>
-
-
-
-            <!-- EMAIL -->
-
-            <div class="card">
-
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmedyounes120@gmail.com"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   aria-label="Send Ahmed an Email">
-
-
-                    <div class="icon">
-
-                        <i class="fas fa-envelope"></i>
-
-                    </div>
-
-
-                    <div class="info">
-
-                        <h3>
-                            Email
-                        </h3>
-
-                    </div>
-
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
-
-    <footer class="footer">
-
-
-        <p class="footer-title">
-
-            © 2026
-
-            <span class="footer-name">
-                Eng. Ahmed Younis
-            </span>
-
-            . All Rights Reserved.
-
-        </p>
-
-
-
-        <div class="social-icons">
-
-
-            <!-- TikTok -->
-
-            <a href="https://www.tiktok.com/@ahmedyounis7578?_r=1&_t=ZS-99LE7FBUnB4"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="TikTok">
-
-                <i class="fab fa-tiktok"></i>
-
-            </a>
-
-
-
-            <!-- YouTube -->
-
-            <a href="https://www.youtube.com/@AHMEDYOUNES_ELHOOT"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="YouTube">
-
-                <i class="fab fa-youtube"></i>
-
-            </a>
-
-
-
-            <!-- Telegram -->
-
-            <a href="https://t.me/Ahemd_Younis_ELHoot"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Telegram">
-
-                <i class="fab fa-telegram"></i>
-
-            </a>
-
-
-
-            <!-- LinkedIn -->
-
-            <a href="https://www.linkedin.com/in/ahmedyounis12/"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="LinkedIn">
-
-                <i class="fab fa-linkedin"></i>
-
-            </a>
-
-
-
-            <!-- Behance -->
-
-            <a href="https://www.behance.net/ahmedyounes22"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Behance">
-
-                <i class="fab fa-behance-square"></i>
-
-            </a>
-
-
-        </div>
-
-
-    </footer>
-
-
-
-    <!-- PDF preview modal used by Summary | CUFE cards -->
-    <div class="pdf-modal" id="pdfModal" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
-        <div class="pdf-modal-head">
-            <h3 id="pdfModalTitle">PDF Preview</h3>
-            <button class="modal-close" type="button" onclick="closePdf()"><i class="fas fa-times"></i> Close</button>
-        </div>
-        <iframe id="pdfFrame" title="PDF document preview" src="about:blank"></iframe>
-    </div>
-    <script>
-        function openPdf(path, title) {
-            const modal = document.getElementById('pdfModal');
-            document.getElementById('pdfModalTitle').textContent = title;
-            document.getElementById('pdfFrame').src = path;
-            modal.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-        function closePdf() {
-            const modal = document.getElementById('pdfModal');
-            modal.classList.remove('open');
-            document.getElementById('pdfFrame').src = 'about:blank';
-            document.body.style.overflow = '';
-        }
-        document.getElementById('pdfModal').addEventListener('click', function(event) {
-            if (event.target === this) closePdf();
-        });
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') closePdf();
-        });
-    </script>
-
-</body>
-
-</html>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; 
+}
+
+
+header {
+    background-color: #f0f0f0;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 200px ;
+}
+
+.logo{
+    text-decoration: none;
+    color: #3a6cf4;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.8em;
+}
+
+.navigation a{
+    color: #3a6cf4;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding-left: 30px;
+}
+
+.navigation a:hover{
+    color: #601cfc;
+}
+
+section {
+    padding: 100px 200px;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(images/fit-01.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.main h2 {
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.main h2 span {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4e9eff;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.main h3 {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.main-btn {
+    color: #fff;
+    background-color: #3a6cf4;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0.9375em 2.1875em;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    transition: 0.7s ease;
+}
+
+.main-btn:hover {
+    background-color: #0a49f6;
+    transform: scale(1.1);
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.7em;
+    padding-right: 30px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: #3a6cf4;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    width: 21.25em;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 15px;
+    transition: 0.7s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card .icon {
+    color: #3a6cf4;
+    font-size: 8em;
+    text-align: center;
+}
+
+.info {
+    text-align: center;
+}
+
+.info h3{
+    color: #3a6cf4;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.projects {
+    background-color: #000016;
+}
+
+.projects .content{
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: #fff;
+    border: 1px solid #fff;
+    min-height: 14em;
+    width: 23em;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px;
+    transition: 0.7s ease;
+}
+
+.project-card:hover {
+   transform: scale(1.1);
+}
+
+.project-card:hover .project-image {
+    opacity: 0.9;
+ }
+
+.project-image img{
+    width: 100%
+}
+
+.project-info {
+    padding: 1em;
+}
+
+.project-category {
+    font-size: 0.8em;
+    color: #000;
+}
+
+.project-title {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.more-details {
+    text-decoration: none;
+    color: #3a6cf4;
+}
+
+.more-details:hover {
+    color: #601cfc;
+}
+
+.contact .icon{
+    font-size: 4.5em;
+}
+
+.contact .info h3 {
+    color: #000;
+}
+
+.contact .info p {
+    font-size: 1.2em;
+}
+
+.footer {
+    background-color: #000016;
+    color: #fff;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-title {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.footer-title span {
+    color: #3a6cf4;
+}
+
+.footer .social-icons a{
+    font-size: 1.3em;
+    padding: 0 12px 0 0;
+}
+
+@media (max-width:1023px){
+    header{
+        padding: 12px 20px;
+    }
+
+    .navigation a{
+        padding-left: 10px;
+    }
+
+    .title{
+        font-size: 1.8em;
+    }
+
+    section{
+        padding: 80px 20px;
+    }
+
+    .main-content h2{
+        font-size: 1em;
+    }
+
+    .main-content h3{
+        font-size: 1.6em;
+    }
+
+    .content{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width:641px){
+    body{
+        font-size: 12px;
+    }
+
+    .main-content h2{
+        font-size: 0.8em;
+    }
+
+    .main-content h3{
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width:300px){
+    body{
+        font-size: 10px;
+     
+    }
+}
+/* Summary Cards - Match Services Cards */
+.summary-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.summary-card {
+    background-color: #fff;
+    width: 21.25em;
+    box-shadow: 0 5px 25px rgba(1, 1, 1, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px;
+    transition: 0.7s ease;
+}
+
+.summary-card:hover {
+    transform: scale(1.05);
+}
+
+.summary-card .pdf-cover {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.summary-card .pdf-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.summary-card .summary-info {
+    padding: 1em;
+    text-align: center;
+}
+
+.summary-card .summary-info h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 10px;
+    color: #3a6cf4;
+}
+
+.summary-card .summary-info p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
