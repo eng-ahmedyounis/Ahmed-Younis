@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +13,7 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <title>Eng Ahmed Younis</title>
+    <title>Ahmed Younis | Structural Design Engineer</title>
 
 
     <style>
@@ -1073,6 +1072,51 @@
 
         }
 
+
+        /* =====================================================
+           ADDED SECTIONS: CODES, SUMMARY | CUFE, STRUCTURAL WORK
+        ===================================================== */
+        .added-section { background: #0B1220; }
+        .added-section.alt { background: #0F172A; }
+        .section-intro { max-width: 780px; margin: -30px auto 38px; text-align: center; color: #94A3B8; }
+        .country-heading { display:flex; align-items:center; justify-content:center; gap:12px; margin: 12px 0 25px; color:#F8FAFC; font-size:1.55em; }
+        .country-flag { display:inline-flex; align-items:center; justify-content:center; font-size:1.7em; filter: drop-shadow(0 4px 8px rgba(0,0,0,.25)); }
+        .code-grid, .summary-grid, .structural-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin-bottom:38px; }
+        .code-country { background:#0F172A; border:1px solid rgba(148,163,184,.14); border-radius:16px; padding:24px; }
+        .code-country h3 { display:flex; align-items:center; gap:10px; margin-bottom:18px; font-size:1.18em; }
+        .code-item { padding:16px 0; border-top:1px solid rgba(148,163,184,.13); }
+        .code-item strong { display:block; color:#F8FAFC; margin-bottom:5px; }
+        .code-item p { color:#94A3B8; font-size:.92em; margin-bottom:13px; }
+        .download-btn, .show-all-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 15px; border-radius:8px; background:#2563EB; color:white; font-weight:700; font-size:.9em; transition:.25s ease; border:0; cursor:pointer; }
+        .download-btn:hover, .show-all-btn:hover { background:#1D4ED8; transform:translateY(-2px); }
+        .summary-card { background:#111C33; border:1px solid rgba(148,163,184,.13); border-radius:15px; overflow:hidden; }
+        .pdf-cover { min-height:230px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; padding:22px; background:linear-gradient(145deg,#172554,#111C33 70%); border-bottom:1px solid rgba(148,163,184,.13); }
+        .pdf-cover i { font-size:3.4em; color:#60A5FA; }
+        .pdf-cover strong { font-size:1.15em; }
+        .pdf-cover span { color:#94A3B8; font-size:.88em; }
+        .summary-info { padding:20px; }
+        .summary-info p { color:#94A3B8; margin:8px 0 16px; font-size:.92em; }
+        .summary-actions { display:flex; flex-wrap:wrap; gap:10px; }
+        .show-all-btn.secondary { background:#1E293B; border:1px solid #334155; }
+        .structural-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+        .structural-card { background:#111C33; border:1px solid rgba(148,163,184,.13); border-radius:15px; overflow:hidden; }
+        .structural-image { min-height:180px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; background:radial-gradient(circle at 50% 20%,rgba(59,130,246,.22),transparent 55%),#172033; color:#60A5FA; text-align:center; padding:18px; }
+        .structural-image i { font-size:3em; }
+        .structural-image span { color:#94A3B8; font-size:.85em; }
+        .structural-info { padding:20px; }
+        .structural-info h4 { color:#F8FAFC; font-size:1.08em; margin-bottom:12px; }
+        .structural-info p { color:#94A3B8; font-size:.93em; margin:6px 0; }
+        .structural-info b { color:#CBD5E1; }
+        .pdf-modal { display:none; position:fixed; inset:0; z-index:2000; background:rgba(2,6,23,.92); padding:3vh 3vw; }
+        .pdf-modal.open { display:flex; flex-direction:column; }
+        .pdf-modal-head { display:flex; align-items:center; justify-content:space-between; gap:15px; margin-bottom:12px; }
+        .pdf-modal-head h3 { font-size:1.1em; }
+        .pdf-modal iframe { width:100%; flex:1; min-height:0; border:0; border-radius:10px; background:white; }
+        .modal-close { color:white; background:#1E293B; border:1px solid #475569; border-radius:8px; padding:10px 14px; cursor:pointer; }
+        .setup-note { color:#64748B; font-size:.82em; line-height:1.6; margin-top:14px; }
+        @media(max-width:1000px) { .code-grid { grid-template-columns:1fr; } .structural-grid,.summary-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+        @media(max-width:750px) { .navigation { gap:8px; flex-wrap:wrap; justify-content:flex-end; max-width:72%; } .navigation a { font-size:.72em; } header { padding:0 3%; } .structural-grid,.summary-grid { grid-template-columns:1fr; } .country-heading { font-size:1.3em; } .pdf-modal { padding:12px; } }
+
     </style>
 
 </head>
@@ -1104,9 +1148,14 @@
             </a>
 
             <a href="#projects">
-                Projects
+                Previous Work
             </a>
 
+            <a href="#codes">Codes</a>
+            <a href="#summary-cufe">Summary | CUFE</a>
+            <!--
+            <a href="#structural-work">Structural Work</a>
+             -->
             <a href="#contact">
                 Contact
             </a>
@@ -1139,7 +1188,7 @@
                     <br>
 
                     <span>
-                        Structural BIM Engineer
+                        Structural Design Engineer
                     </span>
 
                 </h2>
@@ -1147,11 +1196,9 @@
 
                 <h3>
 
-                    Reinforced Concrete Design | ECP • SBC • ACI |
-
-                    <br>
-
-                    Senior Graphic Design | Front-End Developer
+                    Civil Engineer &amp; Structural Design Engineer | Revit Structure |
+                    Reinforced Concrete Design | ECP • SBC • ACI | Senior Graphic Designer |
+                    Front-End Developer | Remote Work Ready
 
                 </h3>
 
@@ -1635,6 +1682,341 @@
 
 
 
+
+
+    <!-- =====================================================
+         CODES SECTION
+         PDF SETUP: put each official PDF in the matching path below.
+         Example: files/codes/ECP-203-2025.pdf
+         Keep the filename and folder path exactly the same as href.
+         Use only PDFs you are authorized to distribute.
+    ===================================================== -->
+
+<section class="added-section alt" id="codes">
+    <h2 class="title">Structural Design Codes</h2>
+
+    <p class="section-intro">
+        Quick access to concrete design and loading codes for Egypt,
+        Saudi Arabia, and the United States.
+    </p>
+
+    <div class="code-grid">
+
+        <!-- Egypt -->
+        <article class="code-country">
+            <h3>
+                <span class="country-flag" aria-label="Egypt flag">🇪🇬</span>
+                Egypt — ECP
+            </h3>
+
+            <div class="code-item">
+                <strong>ECP 203-2025</strong>
+                <p>Design and construction of reinforced concrete structures.</p>
+
+                <div class="summary-actions">
+                    <button class="show-all-btn"
+                        onclick="openPdf('files/codes/ECP-203-2025.pdf', 'ECP 203-2025')">
+                        <i class="fas fa-eye"></i> Read
+                    </button>
+
+                    <a class="download-btn"
+                        href="files/codes/ECP-203-2025.pdf"
+                        download>
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+
+            <div class="code-item">
+                <strong>ECP 201-2012</strong>
+                <p>Loads and forces for structural and building works.</p>
+
+                <div class="summary-actions">
+                    <button class="show-all-btn"
+                        onclick="openPdf('files/codes/ECP-201-2012.pdf', 'ECP 201-2012')">
+                        <i class="fas fa-eye"></i> Read
+                    </button>
+
+                    <a class="download-btn"
+                        href="files/codes/ECP-201-2012.pdf"
+                        download>
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Saudi Arabia -->
+        <article class="code-country">
+            <h3>
+                <span class="country-flag" aria-label="Saudi Arabia flag">🇸🇦</span>
+                Saudi Arabia — SBC
+            </h3>
+
+            <div class="code-item">
+                <strong>SBC 304-2024</strong>
+                <p>Concrete structures code.</p>
+
+                <div class="summary-actions">
+                    <button class="show-all-btn"
+                        onclick="openPdf('files/codes/SBC-304-2024.pdf', 'SBC 304-2024')">
+                        <i class="fas fa-eye"></i> Read
+                    </button>
+
+                    <a class="download-btn"
+                        href="files/codes/SBC-304-2024.pdf"
+                        download>
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+
+            <div class="code-item">
+                <strong>SBC 301-2024</strong>
+                <p>Loads and forces requirements.</p>
+
+                <div class="summary-actions">
+                    <button class="show-all-btn"
+                        onclick="openPdf('files/codes/SBC-301-2024.pdf', 'SBC 301-2024')">
+                        <i class="fas fa-eye"></i> Read
+                    </button>
+
+                    <a class="download-btn"
+                        href="files/codes/SBC-301-2024.pdf"
+                        download>
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- United States -->
+        <article class="code-country">
+            <h3>
+                <span class="country-flag" aria-label="United States flag">🇺🇸</span>
+                United States — ACI / ASCE
+            </h3>
+
+            <div class="code-item">
+                <strong>ACI 318-19</strong>
+                <p>Building Code Requirements for Structural Concrete.</p>
+
+                <div class="summary-actions">
+                    <button class="show-all-btn"
+                        onclick="openPdf('files/codes/ACI-318-19.pdf', 'ACI 318-19')">
+                        <i class="fas fa-eye"></i> Read
+                    </button>
+
+                    <a class="download-btn"
+                        href="files/codes/ACI-318-19.pdf"
+                        download>
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+
+            <div class="code-item">
+                <strong>ASCE/SEI 7-16</strong>
+                <p>Minimum Design Loads and Associated Criteria for Buildings and Other Structures.</p>
+
+                <div class="summary-actions">
+                    <button class="show-all-btn"
+                        onclick="openPdf('files/codes/ASCE-7-16.pdf', 'ASCE/SEI 7-16')">
+                        <i class="fas fa-eye"></i> Read
+                    </button>
+
+                    <a class="download-btn"
+                        href="files/codes/ASCE-7-16.pdf"
+                        download>
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+    <!-- =====================================================
+         SUMMARY | CUFE
+         PDF SETUP: add your two files as:
+         files/summary-cufe/summary-1.pdf and files/summary-cufe/summary-2.pdf
+         Update the visible title below for each file. The preview uses the PDF
+         viewer inside a modal; if you want a custom cover image, place it in
+         images/ and update the img/cover markup for each card.
+    ===================================================== -->
+    
+<section class="added-section" id="summary-cufe">
+    <h2 class="title">Summary | CUFE</h2>
+    <p class="section-intro">
+        My university summaries and study notes from Cairo University Faculty of Engineering.
+    </p>
+
+    <div class="summary-grid">
+
+        <!-- Summary 01 -->
+        <article class="summary-card">
+            <div class="pdf-cover">
+                <img
+                    src="images/cufe-summary-01.png"
+                    alt="CUFE Summary 01 - Lateral Forces Cover"
+                >
+            </div>
+
+            <div class="summary-info">
+                <h3>Lateral Forces</h3>
+                <p>Assignment 1.</p>
+
+                <div class="summary-actions">
+                    <button
+                        class="show-all-btn"
+                        onclick="openPdf('files/summary-cufe/summary-1.pdf', 'Summary File 01')"
+                    >
+                        <i class="fas fa-eye"></i> Read 
+                    </button>
+
+                    <a
+                        class="download-btn"
+                        href="files/summary-cufe/summary-1.pdf"
+                        download
+                    >
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Summary 02 -->
+        <article class="summary-card">
+            <div class="pdf-cover">
+                <img
+                    src="images/cufe-summary-02.png"
+                    alt="CUFE Summary 02 - Estimating and Quantity Surveying Cover"
+                >
+            </div>
+
+            <div class="summary-info">
+                <h3>Estimating and Quantity Surveying</h3>
+                <p>Assignment 1 - Prob 1, 2, 3, 4, 8.</p>
+
+                <div class="summary-actions">
+                    <button
+                        class="show-all-btn"
+                        onclick="openPdf('files/summary-cufe/summary-2.pdf', 'Summary File 02')"
+                    >
+                        <i class="fas fa-eye"></i> Read
+                    </button>
+
+                    <a
+                        class="download-btn"
+                        href="files/summary-cufe/summary-2.pdf"
+                        download
+                    >
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+    <!-- =====================================================
+         STRUCTURAL WORK / PROJECTS
+         Add actual project renders later by replacing each placeholder block
+         with an <img src="images/your-existing-or-new-render.jpg" ...> tag.
+         Existing image names and paths in the Previous Work section above are untouched.
+    ===================================================== -->
+
+<section class="added-section alt" id="structural-work" style="display: none;">
+        <h2 class="title">Structural Work</h2>
+
+    <p class="section-intro">
+        Selected residential structural projects in Egypt and Saudi Arabia.
+    </p>
+
+    <h3 class="country-heading">
+        <span class="country-flag" aria-label="Egypt flag"></span>
+        Projects in Egypt
+    </h3>
+
+    <div class="structural-grid">
+
+        <!-- Project 1 -->
+        <article class="structural-card">
+            <div class="structural-image">
+                <i class="fas fa-city"></i>
+                <strong>Project Render</strong>
+                <span>Villa Compound — 6th of October</span>
+            </div>
+
+            <div class="structural-info">
+                <h4>Villa Compound — 6th of October</h4>
+                <p><b>Building:</b> Ground + First + Second + Roof</p>
+                <p><b>Structural system:</b> Flat slab</p>
+
+                <button class="show-all-btn" type="button"
+                    onclick="openPdf('files/structural-projects/villa-october-portfolio.pdf', 'Villa Compound — 6th of October')">
+                    <i class="fas fa-file-pdf"></i>
+                    View Project Gallery
+                </button>
+            </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="structural-card">
+            <div class="structural-image">
+                <i class="fas fa-building"></i>
+                <strong>Project Render</strong>
+                <span>Residential Building — 6th of October</span>
+            </div>
+
+            <div class="structural-info">
+                <h4>Residential Building — 6th of October</h4>
+                <p><b>Building:</b> Basement + Ground + 13 floors</p>
+                <p><b>Structural system:</b> Solid slab and flat slab</p>
+
+                <button class="show-all-btn" type="button"
+                    onclick="openPdf('files/structural-projects/residential-october-portfolio.pdf', 'Residential Building — 6th of October')">
+                    <i class="fas fa-file-pdf"></i>
+                    View Project Gallery
+                </button>
+            </div>
+        </article>
+
+    </div>
+
+    <h3 class="country-heading">
+        <span class="country-flag" aria-label="Saudi Arabia flag"></span>
+        Projects in Saudi Arabia
+    </h3>
+
+    <div class="structural-grid">
+
+        <!-- Project 4 -->
+        <article class="structural-card">
+            <div class="structural-image">
+                <i class="fas fa-house"></i>
+                <strong>Project Render</strong>
+                <span>Residential Villa — Dammam</span>
+            </div>
+
+            <div class="structural-info">
+                <h4>Residential Villa — Dammam</h4>
+                <p><b>Building:</b> Ground + First + Second</p>
+                <p><b>Structural system:</b> Hordi (ribbed slab)</p>
+
+                <button class="show-all-btn" type="button"
+                    onclick="openPdf('files/structural-projects/villa-dammam-portfolio.pdf', 'Residential Villa — Dammam')">
+                    <i class="fas fa-file-pdf"></i>
+                    View Project Gallery
+                </button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
     <!-- =====================================================
          CONTACT
     ===================================================== -->
@@ -1729,7 +2111,7 @@
 
         <p class="footer-title">
 
-            © 2024
+            © 2026
 
             <span class="footer-name">
                 Eng. Ahmed Younis
@@ -1814,7 +2196,37 @@
     </footer>
 
 
+
+    <!-- PDF preview modal used by Summary | CUFE cards -->
+    <div class="pdf-modal" id="pdfModal" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
+        <div class="pdf-modal-head">
+            <h3 id="pdfModalTitle">PDF Preview</h3>
+            <button class="modal-close" type="button" onclick="closePdf()"><i class="fas fa-times"></i> Close</button>
+        </div>
+        <iframe id="pdfFrame" title="PDF document preview" src="about:blank"></iframe>
+    </div>
+    <script>
+        function openPdf(path, title) {
+            const modal = document.getElementById('pdfModal');
+            document.getElementById('pdfModalTitle').textContent = title;
+            document.getElementById('pdfFrame').src = path;
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closePdf() {
+            const modal = document.getElementById('pdfModal');
+            modal.classList.remove('open');
+            document.getElementById('pdfFrame').src = 'about:blank';
+            document.body.style.overflow = '';
+        }
+        document.getElementById('pdfModal').addEventListener('click', function(event) {
+            if (event.target === this) closePdf();
+        });
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closePdf();
+        });
+    </script>
+
 </body>
 
 </html>
-```
